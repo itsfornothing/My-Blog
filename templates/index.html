@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="static/style.css"/>
+</head>
+<body>
+    <div id="top-div">
+        <p id="top-text">My Blog</p>
+    </div>
+
+    <div class="central-div">
+        {% for post in posts: %}
+            {% if post["id"] == 1 %}
+                <div class = "first-div">
+                    <h2>{{ post["title"] }}</h2>
+                    <h3>{{ post["subtitle"] }}</h3>
+                    <div class="next-page"><p><a href="{{url_for('my_blog')}}">Read</a></p></div>
+                </div>
+
+            {% endif %}
+            {% if post["id"] == 2 %}
+                <div class = "second-div">
+                    <h2>{{ post["title"] }}</h2>
+                    <h3>{{ post["subtitle"] }}</h3>
+                     <div class="next-page"><p><a href="{{url_for('my_blog')}}">Read</a></p></div>
+                </div>
+
+            {% endif %}
+        {% endfor %}
+
+    </div>
+
+</body>
+<footer><p id="footer-p">Made by Halid in Addis Ababa</p></footer>
+</html>
